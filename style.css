@@ -1,0 +1,103 @@
+/* Responsive Web Design - Media Queries  */
+/* https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+/* For mobile phones: */
+
+body {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header {
+    padding: 20px 100%;
+    color: darkslategray;
+    font-family: arial;
+    font-size: .9em;
+    background-color: aqua;
+    margin-bottom: 25px;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    width: 300px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+
+  img {
+    width: 300px;
+    height: 250px;
+  }
+
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    header h1, h2, h3 {
+        
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    
+
+    header h1, h2, h3 {
+        width: 640px;
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        margin: 15px;
+        margin-top: 0;
+        width: 300px;
+    }
+
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    header h1, h2, h3 {
+        width: 960px;
+    }
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1320px) {
+    
+    header h1, h2, h3 {
+        width: 1290px;
+    }
+}
