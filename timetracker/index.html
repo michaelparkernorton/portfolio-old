@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="green" onclick="punchInOut()" id="button">Clock-in</button>
+        <div id="message"></div>
+    </div>
+</body>
+    <script>
+        // 10/26/2022 - working on starting a clock
 
+        // Look up JavaScript Date Reference for more information on date methods
+        // https://www.w3schools.com/jsref/jsref_obj_date.asp
+        
+        console.log();
+        function date(){
+            const d = new Date();
+            let text = d.toLocaleString();    
+            return text;
+        }
+
+        function punchInOut() {
+            const p = document.createElement("p");
+            const text = date();
+            if (button.innerHTML === "Clock-in") {
+                p.textContent = `Clocked-in at ${text}`;
+                document.getElementById("message").appendChild(p);
+                button.innerHTML = "Clock-out";
+                button.classList.remove("green");
+                button.classList.add("red");
+            } else {
+                p.textContent = `Clocked-out at ${text}`;
+                document.getElementById("message").appendChild(p);
+                button.innerHTML = "Clock-in";
+                button.classList.remove("red");
+                button.classList.add("green");
+            }
+        }
+
+    </script>
+</html>

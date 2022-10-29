@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container {
+    align-items: center;
+    margin-top: 50px;
+    width: 500px;
+}
+
+button {
+    margin: 0 auto;
+    font-size: 20px;
+    color: white;
+    width: 120px
+}
+
+#message {
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
