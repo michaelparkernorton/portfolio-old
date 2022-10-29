@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cube">
+        <div class="side top" id="top"></div>
+        <div class="side left" id="left"></div>
+        <div class="side front" id="front"></div>
+     </div>
+</body>
+<script>
 
+    //12:51 PM 60 minutes - made a cube that can rotate forwards and backwards
+
+    // front - dark
+    // top - light
+    // left - middle
+
+    // front - blue
+    // back - green
+    // red- left
+    // orange - right
+    // top - white
+    // bottom - yellow
+
+    // https://codepen.io/m0rta1/pen/npEWEv animated cube
+    
+    document.getElementById("top").style.backgroundColor = "white";
+    document.getElementById("front").style.backgroundColor = "blue";
+    document.getElementById("left").style.backgroundColor = "red";
+
+    let top_side = document.getElementById("top");
+    let front_side = document.getElementById("front");
+    let left_side = document.getElementById("left");
+    let count = 0;
+
+    // 
+
+    window.addEventListener("keydown", (event) => {
+        let arrow_down = "off";
+        if (event.code === "ArrowDown"){
+            if (top_side.style.backgroundColor === "white" && front_side.style.backgroundColor === "blue") {
+                top_side.style.backgroundColor = "green";
+                front_side.style.backgroundColor = "white";
+            } else if (top_side.style.backgroundColor === "green" && front_side.style.backgroundColor === "white") {
+                top_side.style.backgroundColor = "yellow";
+                front_side.style.backgroundColor = "green";
+            } else if (top_side.style.backgroundColor === "yellow" && front_side.style.backgroundColor === "green") {
+                top_side.style.backgroundColor = "blue";
+                front_side.style.backgroundColor = "yellow";
+            } else if (top_side.style.backgroundColor === "blue" && front_side.style.backgroundColor === "yellow") {
+                top_side.style.backgroundColor = "white";
+                front_side.style.backgroundColor = "blue";
+            }
+        }
+        if (event.code === "ArrowUp"){
+            if (top_side.style.backgroundColor === "white" && front_side.style.backgroundColor === "blue") {
+                top_side.style.backgroundColor = "blue";
+                front_side.style.backgroundColor = "yellow";
+            } else if (top_side.style.backgroundColor === "blue" && front_side.style.backgroundColor === "yellow") {
+                top_side.style.backgroundColor = "yellow";
+                front_side.style.backgroundColor = "green";
+            } else if (top_side.style.backgroundColor === "yellow" && front_side.style.backgroundColor === "green") {
+                top_side.style.backgroundColor = "green";
+                front_side.style.backgroundColor = "white";
+            } else if (top_side.style.backgroundColor === "green" && front_side.style.backgroundColor === "white") {
+                top_side.style.backgroundColor = "white";
+                front_side.style.backgroundColor = "blue";
+            }
+        }
+
+    }
+        // if (event.code === "ArrowDown" && top_side.style.backgroundColor === "white" && front_side.style.backgroundColor === "blue") {
+        //     top_side.style.backgroundColor = "green";
+        //     front_side.style.backgroundColor = "white";
+        //     window.scrollTo(0, document.body.scrollHeight);
+        // }
+        // if (event.code === "ArrowDown" && top_side.style.backgroundColor === "green" && front_side.style.backgroundColor === "white") {
+        //     top_side.style.backgroundColor = "yellow";
+        //     front_side.style.backgroundColor = "green";
+        //     window.scrollTo(0, document.body.scrollHeight);
+        // }
+    , true);
+
+    
+        //     top_side.style.backgroundColor = "green";
+        //     front_side.style.backgroundColor = "white";
+        //     window.scrollTo(0, document.body.scrollHeight);
+        // }
+
+
+
+</script>
+</html>
