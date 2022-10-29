@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="heading"></div>
+        <div class="above-game"></div>
+        <div class="board">
+            <div class="box">
+                <div class="tile two w3-animate-opacity" id="box1">2</div>
+            </div>
+            <div class="box">
+                <div class="" id="box2"></div>
+            </div>
+            <div class="box">
+                <div class="" id="box3"></div>
+            </div>
+            <div class="box">
+                <div class="tile two w3-animate-opacity" id="box4">2</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 4:22 PM starting project 1 hour 15 minutes
+    // 6:30 PM
+    window.addEventListener("keydown", (event) => {
+        // It doesn't look like I need this...
+
+        // let box2 = document.getElementById("box2")
+        // let box3 = document.getElementById("box3")
+        // let box4 = document.getElementById("box4")
+        if (event.code === "ArrowDown"){
+            console.log(box4.innerHTML)
+            if (box2.innerHTML === "" && box3.innerHTML === "" && parseInt(box4.innerHTML) === 2) {
+                box4.innerHTML = parseInt(box4.innerHTML) * 2;
+                box4.classList.remove("two");
+                box4.classList.add("four");
+            } else if (box2.innerHTML === "" && box3.innerHTML === "" && parseInt(box4.innerHTML) !== 2) {
+                box3.innerHTML = 2;
+                box3.classList.add("tile", "two");
+            } else if (box2.innerHTML === "" && parseInt(box3.innerHTML) === 2) {
+                box3.innerHTML = parseInt(box3.innerHTML) * 2;
+                box3.classList.remove("two");
+                box3.classList.add("four");
+            } else if (box2.innerHTML === "" && parseInt(box3.innerHTML) === 4 && parseInt(box4.innerHTML) === 4) {
+                box4.innerHTML = parseInt(box4.innerHTML) * 2;
+                box4.classList.remove("four");
+                box4.classList.add("eight");
+                box3.classList.remove("four", "tile");
+                box3.innerHTML = "";
+            } else if (box2.innerHTML === "" && parseInt(box3.innerHTML) !== 2) {
+                box2.innerHTML = 2;
+                box2.classList.add("tile", "two");
+            } else if (parseInt(box2.innerHTML) === 2 && parseInt(box3.innerHTML) !== parseInt(box4.innerHTML)) {
+                box2.innerHTML = parseInt(box2.innerHTML) * 2;
+                box2.classList.remove("two");
+                box2.classList.add("four");
+            } else if (parseInt(box2.innerHTML) === 4 && parseInt(box3.innerHTML) === 4) {
+                box3.innerHTML = parseInt(box3.innerHTML) * 2;
+                box3.classList.remove("four");
+                box3.classList.add("eight");
+                box2.innerHTML = 2;
+                box2.classList.remove("four");
+                box2.classList.add("two");
+            } else if (parseInt(box2.innerHTML) === 2 && parseInt(box3.innerHTML) === 8 && parseInt(box4.innerHTML) === 8) {
+                box4.innerHTML = parseInt(box4.innerHTML) * 2;
+                box4.classList.remove("eight");
+                box4.classList.add("sixteen");
+                box3.classList.remove("eight");
+                box3.classList.add("four");
+                box3.innerHTML = 4;
+                box2.innerHTML = "";
+                box2.classList.remove("two");
+            }
+        }
+    }, true);
+</script>
+</html>

@@ -1,0 +1,74 @@
+
+/* Using Roboto instead of Clear Sans, I could not find this font on google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+body {
+    background-color: rgb(250, 248, 239);
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(119, 110, 101);
+}
+
+.container {
+    margin-top: 30px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.heading {
+    width: 500px;
+    height: 112px;
+}
+
+.above-game {
+    width: 500px;
+    height: 45.19px;
+}
+
+.board {
+    margin-top: 40px;
+    background-color: rgb(187, 173, 160);
+    height: 500px;
+    width: 136.25px;
+    border-radius:6px;
+}
+
+.box {
+    border-radius:3px;
+    margin-top: 15px;
+    margin-left: 15px;
+    background-color: rgb(205, 193, 180);
+    height: 106.25px;
+    width: 106.25px;
+}
+
+.tile {
+    height: 106.25px;
+    width: 106.25px;
+    border-radius:3px;
+    text-align: center;
+    font-size: 55px;
+    line-height: 106.25px;
+}
+
+.two {
+    background-color: rgb(238, 228, 218);
+}
+
+.four {
+    background-color: rgb(238, 225, 201);
+    color:rgb(119, 110, 101);
+}
+
+.eight {
+    background-color: rgb(243, 178, 122);
+    color:rgb(249, 246, 242);
+}
+
+.sixteen {
+    background-color: rgb(246, 150, 100);
+    color:rgb(249, 246, 242);
+}
