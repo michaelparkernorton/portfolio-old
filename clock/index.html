@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+<style>
+    /* Used this code to help create shapes */
+    /* https://css-tricks.com/the-shapes-of-css/ */
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+    :root {
+        --black: rgb(20,20, 21);
+        --gray: rgb(60,60,61);
+        --blue: rgb(135,206,250);
+    }
+    
+    body {
+        /* text-align: center; */
+        background-color: var(--black);
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        
+    }
+    p {
+        margin: 0;
+        padding: 10px;
+    }
+    div {
+        padding: 50px;
+    }
+    #circle-outer {
+    width: 150px;
+    height: 150px;
+    background: var(--gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    #circle-inner {
+    width: 140px;
+    height: 140px;
+    background: var(--black);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    #txt {
+    font-size: 40px;
+    }
+    .container {
+        display:flex;
+        justify-content: center;
+    }
+    .play-circle {
+    width: 1px;
+    height: 1px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    #triangleRight {
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-left: 10px solid var(--black);
+      border-bottom: 5px solid transparent;
+      padding: 0;
+    }
+    .invisible {
+        display: none;
+    }
+</style>
+<body>
+    <p>Stopwatch<p>
+    
+    <div class="container">
+        <div id="circle-outer">
+            <div id="circle-inner">
+                <div id="txt"></div>
+            </div>
+        </div>    
+    </div>
+    <div class="container">
+        <div class="play-circle" onclick="switchSymbols(), clockRun()">
+            <!-- Symbol images from this site -->
+            <!-- https://en.wikipedia.org/wiki/Media_control_symbols -->
+            <img src="pause.png" alt="pause" width="10px" id="pause" class="invisible">
+            <img src="play.png" alt="pause" width="10px" id="playButton">
+        </div>    
+    </div>
+    
+</body>
+<script>
+
+let ms = 0;
+let s = 0;
+let m = 0;
+minutes = checkTime(m);
+seconds = checkTime(s);
+milliseconds = checkTime(ms);
+document.getElementById('txt').innerHTML = minutes + ':' + seconds + ':' + milliseconds;
+let clockrun = false;
+
+
+function switchSymbols() {
+    if (clockrun) {
+        playButton.classList.add("invisible");
+        pause.classList.remove("invisible");
+    } else {
+        pause.classList.add("invisible");
+        playButton.classList.remove("invisible");
+    }
+}
+
+function clockRun () {
+    if (clockrun) {
+        clockrun = false;
+    } else {
+        clockrun = true;
+    }
+    if (clockrun) {
+        startTime();
+    }
+}
+
+function startTime() {
+    if (ms === 100) {
+        ms = 0;
+        s += 1;
+    }
+    if (s === 60) {
+        s = 0;
+        m += 1;
+    }
+    
+    minutes = checkTime(m);
+    seconds = checkTime(s);
+    milliseconds = checkTime(ms);
+    document.getElementById('txt').innerHTML = minutes + ':' + seconds + ':' + milliseconds;
+    ms += 1;
+    if (clockrun) {
+        setTimeout(startTime, 1);
+    }   
+}
+
+// Used this code to help start
+// https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock 
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    // console.log(typeof(i));
+    return i;
+}
+</script>
+</html>

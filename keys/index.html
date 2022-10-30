@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game</title>
+</head>
+<body>
+    <div id="output" tabindex="0"></div>
+</body>
+<script>
+    // window.addEventListener("keydown", (event) => {
+    //     if (event.code !== "ShiftLeft" && event.key !== "Dead" && event.key !== "Backspace" && event.key !== "Control") {
+    //         const span = document.createElement("span");
+    //         span.textContent = `${event.key}`;
+    //         document.getElementById("output").appendChild(span);
+    //         window.scrollTo(0, document.body.scrollHeight);
+    //     } else if (event.key === "Backspace"){
+    //         let output = document.getElementById("output");
+    //         output.removeChild(output.lastElementChild);
+    //     }
+    // }, true);
+    // Code from https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
+    window.addEventListener("keydown", (event) => {
+        if (event.code !== "ShiftLeft" && event.code !== "Quote") {
+            const p = document.createElement("p");
+            p.textContent = `KeyboardEvent: key='${event.key}' | code='${event.code}'`;
+            document.getElementById("output").appendChild(p);
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+    }, true);
+</script>
+</html>

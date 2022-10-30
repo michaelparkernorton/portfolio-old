@@ -1,0 +1,61 @@
+body {
+    font-size: 12px;
+}
+.container {
+    margin: 0 auto;
+    background-color: lightblue;
+    width: 220px;
+}
+#status_bar {
+    display:flex;
+}
+#hint {
+    line-height: 20px;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    background-color: lightcoral;
+}
+#finished {
+    line-height: 20px;
+    padding-left:5px;
+}
+#scripture_box {          
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    background-color: lightyellow;
+}
+#timer {
+    line-height: 20px;
+    padding-left:5px;
+}
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1320px) {
+    
+    body {
+        font-size: 32px;
+    }
+    .container {
+        margin: 0 auto;
+        width: 620px;
+    }
+    #hint {
+        line-height: 42px;
+        height: 50px;
+        width: 50px;
+    }
+    #finished {
+        line-height: 46px;
+        padding-left:15px;
+    }
+    #scripture_box {          
+        height: 600px;
+        width: 600px;
+        padding: 10px;
+    }
+
+}
