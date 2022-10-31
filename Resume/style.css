@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 400px;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    img {
+        width: 500px;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    img {
+        width: 700px;
+    }
+ }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    img {
+        width: 900px;
+    }
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1320px) {
+    img {
+        width: 1000px;
+    }
+}
