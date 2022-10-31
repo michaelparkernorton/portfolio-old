@@ -2,30 +2,61 @@
 /* https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
 /* For mobile phones: */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+  --black: rgb(20,20, 21);
+  --gray: rgb(60,60,61);
+  --clockblue: rgb(76,139,244);
+  --clockgray: rgb(208,217,220);
+  --clockwhite: rgb(251,251,250);
+}
+
 body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;;
+}
+
+.banner {
+  display:flex;
+  justify-content: center;
+  background-color: aqua;
+  padding: 20px 0;
+  width: 100%;
+}
+.content {
+  display: flex;
+  justify-content: center;
+}
+.appbox {
     margin: 0;
-    display: flex;
+    width: 325px;
+}
+.container {
+    margin: 20px;
+    display:flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 header {
-    padding: 20px 100%;
     color: darkslategray;
     font-family: arial;
     font-size: .9em;
-    background-color: aqua;
-    margin-bottom: 25px;
+    
+    width: 325px;
 }
 
 h1, h2, h3 {
     margin: 0;
-    width: 300px;
+    /* width: 100%; */
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 200px;
     margin-bottom: 25px;
     text-align: center;
     font-family: arial;
@@ -51,53 +82,81 @@ h1, h2, h3 {
   .card button:hover {
     opacity: 0.7;
   }
+  
+  .app {
+    text-align: center;
+    font-size: 12px;
+    margin: 10px;
+    
+  }
 
-  img {
-    width: 300px;
-    height: 250px;
+  a, a.visited {
+    text-decoration: none;
+  }
+
+  /* img {
+    width: 20px;
+    height: 20px;
+  } */
+
+  #circle-outer {
+    width: 50px;
+    height: 50px;
+    background: var(--clockgray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #circle-inner {
+    width: 40px;
+    height: 40px;
+    background: var(--clockblue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  #circle-center {
+    width: 5px;
+    height: 5px;
+    background: var(--clockwhite);
+    border-radius: 50%;
+  }
+  #rectangle {
+    width: 17px;
+    height: 2px;
+    background: var(--clockwhite);
+  }
+  #smallhand {
+    width: 10px;
+    height: 2px;
+    background: var(--clockgray);
   }
 
   @media only screen and (min-width: 600px) {
     /* For tablets: */
-    header h1, h2, h3 {
-        
+    .content {
+      justify-content: center;
+      width: 500px;
     }
-  }
-
-  @media only screen and (min-width: 768px) {
-    /* For desktop: */
-    
-
-    header h1, h2, h3 {
-        width: 640px;
-    }
-    
     .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+      width: 500px;
     }
-
-    .card {
-        margin: 15px;
-        margin-top: 0;
-        width: 300px;
-    }
-
+    h1, h2, h3 {
+      width: 450px;
   }
+  }
+
 
   /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    header h1, h2, h3 {
-        width: 960px;
-    }
+  
     
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1320px) {
     
-    header h1, h2, h3 {
-        width: 1290px;
-    }
+    
 }
