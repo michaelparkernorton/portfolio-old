@@ -29,6 +29,13 @@ body {
   padding: 5px 20px;
 }
 
+.camera {
+  height: 15px;
+  border-radius: 100%;
+  width: 15px;
+  background: black;
+}
+
 .banner {
   display: flex;
   justify-content: center;

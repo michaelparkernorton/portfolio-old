@@ -11,7 +11,7 @@ function minutesString (minutes) {
 
 function upDateTime() {
     today = new Date();
-    hours = today.getHours();
+    hours = today.getHours()%12;
     minutes = minutesString(today.getMinutes());
     seconds = today.getSeconds();
     time = hours + ':' + minutes;
