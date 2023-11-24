@@ -15,7 +15,7 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  color: #57575B;
+  color: #57575b;
   font-size: 10px;
   font-weight: 600;
 }
@@ -153,14 +153,25 @@ a.visited {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
   }
 
   img {
-    width: 100%;
     border-radius: 20px;
+  }
+  #pixel7prophone {
+    position: absolute;
+    top: 50%-300;
+    left: 50%-100;
+    height: 630px;
+    width: 305px;
   }
   .content {
     /* justify-content: center; */
+    /* justify-content: center; */
+    position: absolute;
+    top: 50% - 300px;
+    left: 50% - 276/2;
     height: 600px;
     width: 276px;
     border-radius: 20px;
