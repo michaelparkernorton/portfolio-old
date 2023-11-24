@@ -175,14 +175,35 @@ a.visited {
     rotate: -.3deg;
   }
   .content {
-    /* justify-content: center; */
-    /* justify-content: center; */
     position: absolute;
-    top: 50% - 300px;
-    left: 50% - 276/2;
+    /* top: 50% - 300px;
+    left: 50% - 276/2; */
     height: 600px;
     width: 276px;
     border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .top {
+    width: 276px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 40px;
+    /* background: blue; */
+  }
+  .searchbar {
+    margin: 10px 20px;
+    width: 250px;
+    height: 40px;
+    background: white;
+    border-radius: 25px;
+    border: none;
+    padding-left: 15px;
+    
+  }
+
+  ::placeholder {
+    color: #191919;
   }
   /* .container {
     width: 500px;
